@@ -53,7 +53,7 @@ function loadTable(listAllUsers) {
                 <td>${user.email}</td>
                 <td>${user.roles ? user.roles.map(role => role.name.substring(5)).join(', ') : 'No roles'}</td>
                 <td>
-                    <button class="btn btn-info" type="button"
+                    <button class="btn btn-primary" type="button"
                     data-bs-toggle="modal" data-bs-target="#editModal"
                     onclick="editModal(${user.id})">Edit</button></td>
                 <td>

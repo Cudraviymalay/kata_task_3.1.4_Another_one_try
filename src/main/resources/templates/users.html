@@ -100,7 +100,7 @@
                                     <div class="container">
                                         <div class="col-md-3 mx-auto">
                                             <div class="form-group text-center">
-                                                <label for="newName" class="form-label fw-bold">Name</label>
+                                                <label for="newName" class="form-label fw-bold">Username</label>
                                                 <input type="text" class="form-control" id="newName" required/>
                                             </div>
                                             <div class="form-group text-center">
@@ -151,22 +151,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Редактировать пользователя</h5>
+                <h5 class="modal-title" id="editModalLabel">Edit user</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="modalEdit">
                     <input type="hidden" id="editId">
                     <div class="mb-3">
-                        <label for="editNameU" class="form-label">Имя</label>
+                        <label for="editNameU" class="form-label">Username</label>
                         <input type="text" class="form-control" id="editNameU">
                     </div>
                     <div class="mb-3">
-                        <label for="editSurname" class="form-label">Фамилия</label>
+                        <label for="editSurname" class="form-label">Surname</label>
                         <input type="text" class="form-control" id="editSurname">
                     </div>
                     <div class="mb-3">
-                        <label for="editAge" class="form-label">Возраст</label>
+                        <label for="editAge" class="form-label">Age</label>
                         <input type="text" class="form-control" id="editAge">
                     </div>
                     <div class="mb-3">
@@ -174,18 +174,18 @@
                         <input type="email" class="form-control" id="editEmail" autocomplete="username">
                     </div>
                     <div class="mb-3">
-                        <label for="editPassword" class="form-label">Пароль</label>
+                        <label for="editPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="editPassword" autocomplete="current-password">
                     </div>
                     <div class="mb-3">
-                        <label for="editRole" class="form-label">Роли</label>
+                        <label for="editRole" class="form-label">Role</label>
                         <select id="editRole" multiple class="form-control"></select>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary" onclick="editUser()">Сохранить</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                <button type="button" class="btn btn-primary" onclick="editUser()">Изменить</button>
             </div>
         </div>
     </div>
@@ -196,22 +196,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Удалить пользователя</h5>
+                <h5 class="modal-title" id="deleteModalLabel">Delete user</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="modalDelete">
                     <input type="hidden" id="deleteId">
                     <div class="mb-3">
-                        <label for="deleteNameU" class="form-label">Имя</label>
+                        <label for="deleteNameU" class="form-label">Username</label>
                         <input type="text" class="form-control" id="deleteNameU" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="deleteSurname" class="form-label">Фамилия</label>
+                        <label for="deleteSurname" class="form-label">Surname</label>
                         <input type="text" class="form-control" id="deleteSurname" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="deleteAge" class="form-label">Возраст</label>
+                        <label for="deleteAge" class="form-label">Age</label>
                         <input type="text" class="form-control" id="deleteAge" readonly>
                     </div>
                     <div class="mb-3">
@@ -219,17 +219,17 @@
                         <input type="email" class="form-control" id="deleteEmail" readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="deletePassword" class="form-label">Пароль</label>
+                        <label for="deletePassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="deletePassword" readonly="current-password">
                     </div>
                     <div class="mb-3">
-                        <label for="deleteRole" class="form-label">Роли</label>
+                        <label for="deleteRole" class="form-label">Role</label>
                         <select id="deleteRole" multiple class="form-control" disabled></select>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
                 <button type="button" class="btn btn-danger" onclick="deleteUser()">Удалить</button>
             </div>
         </div>

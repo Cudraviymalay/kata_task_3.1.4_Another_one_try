@@ -36,7 +36,8 @@
             <ul class="list-unstyled">
                 <div class="btn-group-vertical" role="group" aria-label="Basic example" style="width: 100%;">
                     <a href="/admin" class="btn btn-light" role="button">Admin</a>
-                    <a href="/user" class="btn btn-primary active" role="button" style="background-color: #007BFF; border-color: #007BFF;">User</a>
+                    <a href="/user" class="btn btn-primary active" role="button"
+                       style="background-color: #007BFF; border-color: #007BFF;">User</a>
                 </div>
             </ul>
         </div>
@@ -45,30 +46,31 @@
             <div class="container mt-4">
                 <h1 class="mb-4">User Information</h1>
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="bg-light card-title">About User</h5>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Username</th>
-                                    <th>Surname</th>
-                                    <th>Age</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                </tr>
-                                </thead>
-                                <tbody id="userTableBody">
-                                <!-- Данные пользователя будут добавлены через JS -->
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="card-header">
+                        <h5>About user</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Surname</th>
+                                <th>Age</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                            </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                            <!-- Данные пользователя будут добавлены через JS -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- Bootstrap JS -->
