@@ -11,7 +11,7 @@ function listRoles() {
     let tmp = ''; // Переменная для хранения HTML кода ролей
     getRoles().then(roles =>
         roles.forEach(role => {
-            tmp += `<option value="${role.id}">${role.name}</option>`; // Формируем <option> для каждой роли
+            tmp += `<option value="${role.id}">${role.name.substring(5)}</option>`; // Формируем <option> для каждой роли
         })
     ).then(r => {
         console.log('listRoles');
@@ -75,7 +75,7 @@ document.getElementById('newUserForm').addEventListener('submit', (e) => {
     let rolesAddUser = [];
     for (let i = 0; i < role.options.length; i++) {
         if (role.options[i].selected) {
-            rolesAddUser.push({ id: role.options[i].value, role: 'ROLE_' + role.options[i].innerHTML });
+            rolesAddUser.push({id: role.options[i].value, role: 'ROLE_' + role.options[i].innerHTML});
         }
     }
     fetch(url + '/users', {
@@ -120,7 +120,7 @@ function editModal(id) {
             allRoles.forEach(role => {
                 const option = document.createElement('option');
                 option.value = role.id;
-                option.textContent = role.name;
+                option.textContent = role.name.substring(5);
                 option.selected = u.roles && u.roles.some(userRole => userRole.id === role.id); // Отмечаем роли пользователя
                 rolesSelect.appendChild(option);
             });
@@ -140,10 +140,18 @@ async function editUser() {
     let listOfRole = [];
     for (let i = 0; i < rolesSelect.options.length; i++) {
         if (rolesSelect.options[i].selected) {
-            listOfRole.push({ id: rolesSelect.options[i].value });
+            listOfRole.push({id: rolesSelect.options[i].value});
         }
     }
-    let user = { id: idValue, username: nameValue, surname: surnameValue, age: ageValue, email: emailValue, password: passwordValue, roles: listOfRole };
+    let user = {
+        id: idValue,
+        username: nameValue,
+        surname: surnameValue,
+        age: ageValue,
+        email: emailValue,
+        password: passwordValue,
+        roles: listOfRole
+    };
     await fetch(url + '/users/' + user.id, {
         method: "PUT",
         headers: {
@@ -170,7 +178,7 @@ function deleteModal(id) {
             rolesContainer.innerHTML = '';
             u.roles.forEach(role => {
                 const option = document.createElement('option');
-                option.textContent = role.name;
+                option.textContent = role.name.substring(5);
                 rolesContainer.appendChild(option);
             });
         }));
@@ -180,7 +188,7 @@ function deleteModal(id) {
 async function deleteUser() {
     const id = document.getElementById("deleteId").value;
     let urlDel = url + "/users/" + id;
-    let method = { method: 'DELETE', headers: { "Content-Type": "application/json" } };
+    let method = {method: 'DELETE', headers: {"Content-Type": "application/json"}};
     fetch(urlDel, method).then(() => {
         closeModal();
         getUserData(); // Обновляем таблицу
@@ -200,7 +208,8 @@ function getCurrentUser() {
             document.getElementById('usernamePlaceholder').textContent = user.username;
             document.getElementById('userRoles').textContent = user.roles
                 ? user.roles.map(role => role.name.substring(5)).join(', ')
-                : 'No roles';        });
+                : 'No roles';
+        });
 }
 
 // Вызываем функцию для получения текущего пользователя
