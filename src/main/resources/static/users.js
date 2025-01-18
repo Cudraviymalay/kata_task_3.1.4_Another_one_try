@@ -1,8 +1,8 @@
-﻿const url = 'http://localhost:8080/api/admin'; // Базовый URL API для администрирования пользователей
+﻿const url = '/api/admin'; // Базовый URL API для администрирования пользователей
 
 // Асинхронная функция для получения списка ролей
 async function getRoles() {
-    return await fetch("http://localhost:8080/api/admin/roles") // Отправляем GET-запрос для получения ролей
+    return await fetch("/api/admin/roles") // Отправляем GET-запрос для получения ролей
         .then(response => response.json()); // Преобразуем ответ в JSON
 }
 
@@ -202,7 +202,7 @@ function closeModal() {
 
 // Получение текущего пользователя
 function getCurrentUser() {
-    fetch('http://localhost:8080/api/user')
+    fetch('/api/user')
         .then(res => res.json())
         .then(user => {
             document.getElementById('usernamePlaceholder').textContent = user.username;

@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/api/user';
+const apiUrl = '/api/user';
 
 /**
  * Получение данных текущего пользователя из API и отображение на странице
