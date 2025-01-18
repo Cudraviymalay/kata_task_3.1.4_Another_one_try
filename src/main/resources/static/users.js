@@ -215,9 +215,13 @@ function getCurrentUser() {
 // Вызываем функцию для получения текущего пользователя
 getCurrentUser();
 
-// Переключение на вкладку добавления пользователя
 document.getElementById('show-new-user-form').addEventListener('click', function (event) {
     event.preventDefault();
-    var tab = new bootstrap.Tab(this); // Bootstrap метод переключения вкладок
+
+    // Сброс полей формы
+    document.getElementById('newUserForm').reset();
+
+    // Переключение вкладки
+    var tab = new bootstrap.Tab(this);
     tab.show();
 });
